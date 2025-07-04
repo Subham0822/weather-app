@@ -86,3 +86,311 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+@layer utilities {
+  /* Custom Animations */
+  @keyframes gradient-shift {
+    0%,
+    100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  @keyframes lightning {
+    0%,
+    90%,
+    100% {
+      opacity: 1;
+    }
+    5%,
+    85% {
+      opacity: 0.3;
+    }
+  }
+
+  @keyframes lightning-flash {
+    0%,
+    90%,
+    100% {
+      opacity: 0;
+    }
+    5%,
+    10% {
+      opacity: 0.8;
+    }
+  }
+
+  @keyframes wind-sway {
+    0%,
+    100% {
+      transform: translateX(0px);
+    }
+    25% {
+      transform: translateX(10px);
+    }
+    75% {
+      transform: translateX(-10px);
+    }
+  }
+
+  @keyframes pulse-soft {
+    0%,
+    100% {
+      opacity: 0.6;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  @keyframes float-gentle {
+    0%,
+    100% {
+      transform: translateY(0px) translateX(0px);
+    }
+    33% {
+      transform: translateY(-10px) translateX(5px);
+    }
+    66% {
+      transform: translateY(-5px) translateX(-5px);
+    }
+  }
+
+  @keyframes twinkle {
+    0%,
+    100% {
+      opacity: 0.3;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.2);
+    }
+  }
+
+  @keyframes rain-drop {
+    0% {
+      transform: translateY(-100vh) rotate(10deg);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(100vh) rotate(10deg);
+      opacity: 0;
+    }
+  }
+
+  @keyframes snow-fall {
+    0% {
+      transform: translateY(-100vh) translateX(0px);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(100vh) translateX(100px);
+      opacity: 0;
+    }
+  }
+
+  @keyframes storm-particle {
+    0% {
+      transform: translateY(-100vh) translateX(-50px);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(100vh) translateX(50px);
+      opacity: 0;
+    }
+  }
+
+  @keyframes wind-particle {
+    0% {
+      transform: translateX(-100vw) translateY(0px);
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(100vw) translateY(-50px);
+      opacity: 0;
+    }
+  }
+
+  @keyframes fog-drift {
+    0%,
+    100% {
+      transform: translateX(0px);
+      opacity: 0.1;
+    }
+    50% {
+      transform: translateX(20px);
+      opacity: 0.3;
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fade-in-delay {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slide-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slide-up-delay {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes scale-in {
+    from {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes pulse-glow {
+    0%,
+    100% {
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+    }
+    50% {
+      box-shadow: 0 0 40px rgba(255, 255, 255, 0.2);
+    }
+  }
+
+  .animate-gradient-shift {
+    background-size: 200% 200%;
+    animation: gradient-shift 8s ease infinite;
+  }
+
+  .animate-lightning {
+    animation: lightning 4s ease-in-out infinite;
+  }
+
+  .animate-lightning-flash {
+    animation: lightning-flash 4s ease-in-out infinite;
+  }
+
+  .animate-wind-sway {
+    animation: wind-sway 6s ease-in-out infinite;
+  }
+
+  .animate-pulse-soft {
+    animation: pulse-soft 3s ease-in-out infinite;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-float-gentle {
+    animation: float-gentle 8s ease-in-out infinite;
+  }
+
+  .animate-twinkle {
+    animation: twinkle 2s ease-in-out infinite;
+  }
+
+  .animate-rain-drop {
+    animation: rain-drop 1s linear infinite;
+  }
+
+  .animate-snow-fall {
+    animation: snow-fall 3s linear infinite;
+  }
+
+  .animate-storm-particle {
+    animation: storm-particle 2s linear infinite;
+  }
+
+  .animate-wind-particle {
+    animation: wind-particle 4s linear infinite;
+  }
+
+  .animate-fog-drift {
+    animation: fog-drift 10s ease-in-out infinite;
+  }
+
+  .animate-fade-in {
+    animation: fade-in 1s ease-out;
+  }
+
+  .animate-fade-in-delay {
+    animation: fade-in-delay 1s ease-out 0.2s both;
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.8s ease-out 0.4s both;
+  }
+
+  .animate-slide-up-delay {
+    animation: slide-up-delay 0.8s ease-out 0.6s both;
+  }
+
+  .animate-scale-in {
+    animation: scale-in 0.6s ease-out 0.8s both;
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 0.6s ease-out 1s both;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+}
