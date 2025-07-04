@@ -41,7 +41,7 @@ export default function Home() {
   
   const { toast } = useToast();
 
-  const API_KEY = 'a99d599509864bb3a5261008250407';
+  const API_KEY = process.env.NEXT_PUBLIC_WEATHER_API_KEY!;
 
   useEffect(() => {
     async function fetchData() {
