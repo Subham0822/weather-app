@@ -58,7 +58,7 @@ export default function Home() {
       setIsLoading(true)
       setError(null)
       setRecommendation("")
-
+      const start = Date.now();
       try {
         const response = await fetch(`https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${location}&aqi=no`)
         if (!response.ok) {
@@ -84,7 +84,13 @@ export default function Home() {
         })
         setWeather(null)
       } finally {
-        setIsLoading(false)
+        const elapsed = Date.now() - start;
+        const minDelay = 500; // 0.5s
+        if (elapsed < minDelay) {
+          setTimeout(() => setIsLoading(false), minDelay - elapsed);
+        } else {
+          setIsLoading(false);
+        }
       }
     }
 
